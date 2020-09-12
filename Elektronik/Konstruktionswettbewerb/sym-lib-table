@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Konstruktionswettbewerb-rescue)(type Legacy)(uri ${KIPRJMOD}/Konstruktionswettbewerb-rescue.lib)(options "")(descr ""))
+)

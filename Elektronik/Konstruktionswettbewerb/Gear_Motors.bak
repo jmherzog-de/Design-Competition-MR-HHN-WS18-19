@@ -1,0 +1,106 @@
+EESchema Schematic File Version 4
+LIBS:Konstruktionswettbewerb-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 5
+Title "Gear Motors On Left And Right Side"
+Date ""
+Rev "2"
+Comp "DaRRa"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Motor:Motor_DC -M51
+U 1 1 5BF1CEC2
+P 8850 1700
+F 0 "-M51" H 9008 1696 50  0000 L CNN
+F 1 "Gear Motor \"Left\"" H 9008 1605 50  0000 L CNN
+F 2 "" H 8850 1610 50  0001 C CNN
+F 3 "~" H 8850 1610 50  0001 C CNN
+	1    8850 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Motor:Motor_DC -M52
+U 1 1 5BF1CF67
+P 8050 3000
+F 0 "-M52" H 8208 2996 50  0000 L CNN
+F 1 "Gear Motor \"Right\"" H 8208 2905 50  0000 L CNN
+F 2 "" H 8050 2910 50  0001 C CNN
+F 3 "~" H 8050 2910 50  0001 C CNN
+	1    8050 3000
+	1    0    0    -1  
+$EndComp
+Text HLabel 5650 1700 0    50   Output ~ 0
+GND
+Text HLabel 5500 3950 0    50   Input ~ 0
+PWM_Gear_Motor_Left_Forward
+Text HLabel 5450 2850 0    50   Input ~ 0
+PWM_Gear_Motor_Right_Forward
+Wire Wire Line
+	6800 1300 8850 1300
+Wire Wire Line
+	8850 1300 8850 1500
+Wire Wire Line
+	6800 1400 8400 1400
+Wire Wire Line
+	8400 1400 8400 2150
+Wire Wire Line
+	8400 2150 8850 2150
+Wire Wire Line
+	8850 2150 8850 2000
+Wire Wire Line
+	6800 1650 8050 1650
+Wire Wire Line
+	8050 1650 8050 2800
+Wire Wire Line
+	6800 1750 7550 1750
+Wire Wire Line
+	7550 1750 7550 3650
+Wire Wire Line
+	7550 3650 8050 3650
+Wire Wire Line
+	8050 3650 8050 3300
+Wire Wire Line
+	5650 1700 5900 1700
+Wire Wire Line
+	5450 2850 6100 2850
+Wire Wire Line
+	6100 2850 6100 2550
+Wire Wire Line
+	5500 3950 6450 3950
+Wire Wire Line
+	6450 3950 6450 2550
+Text HLabel 5600 1350 0    50   Input ~ 0
++6V
+$Comp
+L Konstruktionswettbewerb-rescue:MotorController-Driver_Motor -A51
+U 1 1 5BF2EF2E
+P 6300 1350
+F 0 "-A51" H 6350 1675 50  0000 C CNN
+F 1 "MotorController" H 6350 1584 50  0000 C CNN
+F 2 "" H 6300 1650 50  0001 C CNN
+F 3 "" H 6300 1650 50  0001 C CNN
+	1    6300 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 1350 5600 1350
+Text HLabel 5450 3150 0    50   Input ~ 0
+PWM_Gear_Motor_Right_Backward
+Text HLabel 5450 4250 0    50   Input ~ 0
+PWM_Gear_Motor_Left_Backward
+Wire Wire Line
+	5450 3150 6250 3150
+Wire Wire Line
+	6250 3150 6250 2550
+Wire Wire Line
+	5450 4250 6600 4250
+Wire Wire Line
+	6600 4250 6600 2550
+$EndSCHEMATC

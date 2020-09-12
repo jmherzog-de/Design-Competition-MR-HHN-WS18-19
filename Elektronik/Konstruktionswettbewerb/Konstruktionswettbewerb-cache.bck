@@ -1,0 +1,177 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Device_Battery
+#
+DEF Device_Battery BT 0 0 N N 1 F N
+F0 "BT" 100 100 50 H V L CNN
+F1 "Device_Battery" 100 0 50 H V L CNN
+F2 "" 0 60 50 V I C CNN
+F3 "" 0 60 50 V I C CNN
+DRAW
+S -80 -55 80 -65 0 1 0 F
+S -80 70 80 60 0 1 0 F
+S -52 -78 50 -98 0 1 0 F
+S -52 47 50 27 0 1 0 F
+P 2 0 1 0 0 -60 0 -50 N
+P 2 0 1 0 0 -40 0 -30 N
+P 2 0 1 0 0 -20 0 -10 N
+P 2 0 1 0 0 0 0 10 N
+P 2 0 1 0 0 20 0 30 N
+P 2 0 1 0 0 70 0 100 N
+P 2 0 1 10 10 105 50 105 N
+P 2 0 1 10 30 125 30 85 N
+X + 1 0 200 100 D 50 50 1 1 P
+X - 2 0 -200 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Konstruktionswettbewerb-rescue_Arduino_Uno_R3-MCU_Microchip_AVR
+#
+DEF Konstruktionswettbewerb-rescue_Arduino_Uno_R3-MCU_Microchip_AVR -F 0 40 Y Y 1 F N
+F0 "-F" -50 450 50 H V C CNN
+F1 "Konstruktionswettbewerb-rescue_Arduino_Uno_R3-MCU_Microchip_AVR" 0 -1750 50 H V C CNN
+F2 "" -50 450 50 H I C CNN
+F3 "" -50 450 50 H I C CNN
+DRAW
+S -600 350 600 -1650 0 1 0 N
+X (PWM)_10 ~ 650 -350 100 L 50 50 1 1 B
+X (PWM)_11 ~ 650 -250 100 L 50 50 1 1 B
+X (PWM)_12 ~ 650 -150 100 L 50 50 1 1 B
+X (PWM)_13 ~ 650 -50 100 L 50 50 1 1 B
+X (PWM)_3 ~ 700 -1200 100 L 50 50 1 1 B
+X (PWM)_5 ~ 700 -1000 100 L 50 50 1 1 B
+X (PWM)_6 ~ 700 -900 100 L 50 50 1 1 B
+X (RX)_0 ~ 700 -1500 100 L 50 50 1 1 I
+X (TX)_1 ~ 700 -1400 100 L 50 50 1 1 O
+X 2 ~ 700 -1300 100 L 50 50 1 1 B
+X 3.3V ~ -700 -150 100 R 50 50 1 1 I
+X 4 ~ 700 -1100 100 L 50 50 1 1 B
+X 5V_(OUT) ~ -700 -250 100 R 50 50 1 1 O
+X 7 ~ 700 -800 100 L 50 50 1 1 B
+X 8 ~ 650 -550 100 L 50 50 1 1 B
+X 9 ~ 650 -450 100 L 50 50 1 1 B
+X A0 ~ -700 -1000 100 R 50 50 1 1 I
+X A1 ~ -700 -1100 100 R 50 50 1 1 I
+X A2 ~ -700 -1200 100 R 50 50 1 1 I
+X A3 ~ -700 -1300 100 R 50 50 1 1 I
+X A4 ~ -700 -1400 100 R 50 50 1 1 I
+X A5 ~ -700 -1500 100 R 50 50 1 1 I
+X AREF ~ 650 150 100 L 50 50 1 1 O
+X GND ~ -700 -450 100 R 50 50 1 1 O
+X GND ~ -700 -350 100 R 50 50 1 1 O
+X GND ~ 650 50 100 L 50 50 1 1 O
+X IOREF ~ -700 50 100 R 50 50 1 1 I
+X RESET ~ -700 -50 100 R 50 50 1 1 I
+X Vin ~ -700 -550 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# Konstruktionswettbewerb-rescue_HC-SR04-Sensor
+#
+DEF Konstruktionswettbewerb-rescue_HC-SR04-Sensor B 0 40 Y Y 1 F N
+F0 "B" 0 300 50 H V C CNN
+F1 "Konstruktionswettbewerb-rescue_HC-SR04-Sensor" 50 -300 50 H V C CNN
+F2 "" 0 300 50 H I C CNN
+F3 "" 0 300 50 H I C CNN
+DRAW
+S -250 250 300 -250 0 1 0 N
+X Vcc 1 -350 200 100 R 50 50 1 1 I
+X Trig 2 -350 50 100 R 50 50 1 1 I
+X Echo 3 -350 -50 100 R 50 50 1 1 I
+X GND 4 -350 -200 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# Konstruktionswettbewerb-rescue_MotorController-Driver_Motor
+#
+DEF Konstruktionswettbewerb-rescue_MotorController-Driver_Motor -U 0 40 Y Y 1 F N
+F0 "-U" 0 300 50 H V C CNN
+F1 "Konstruktionswettbewerb-rescue_MotorController-Driver_Motor" 50 200 50 H V C CNN
+F2 "" 0 300 50 H I C CNN
+F3 "" 0 300 50 H I C CNN
+DRAW
+S -300 150 400 -1100 0 1 0 N
+X Enable_Motor_A IN1 -200 -1200 100 U 50 50 1 1 I
+X Enable_Motor_A IN2 -50 -1200 100 U 50 50 1 1 I
+X Enable_Motor_B IN3 150 -1200 100 U 50 50 1 1 I
+X Enable_Motor_B IN4 300 -1200 100 U 50 50 1 1 I
+X +12V ~ -400 0 100 R 50 50 1 1 I
+X +5V ~ -400 100 100 R 50 50 1 1 I
+X GND ~ -400 -350 100 R 50 50 1 1 I
+X OUT1_1 ~ 500 50 100 L 50 50 1 1 O
+X OUT1_2 ~ 500 -50 100 L 50 50 1 1 O
+X OUT2_1 ~ 500 -300 100 L 50 50 1 1 O
+X OUT2_2 ~ 500 -400 100 L 50 50 1 1 O
+ENDDRAW
+ENDDEF
+#
+# Motor_Motor_DC
+#
+DEF Motor_Motor_DC M 0 0 Y Y 1 F N
+F0 "M" 100 100 50 H V L CNN
+F1 "Motor_Motor_DC" 100 -200 50 H V L TNN
+F2 "" 0 -90 50 H I C CNN
+F3 "" 0 -90 50 H I C CNN
+$FPLIST
+ PinHeader*P2.54mm*
+ TerminalBlock*
+$ENDFPLIST
+DRAW
+C 0 -60 128 0 1 10 N
+P 5 0 0 0 -50 -130 -50 20 0 -80 50 20 50 -130 N
+P 2 0 1 0 0 -300 0 -280 N
+P 2 0 1 0 0 -188 0 -204 N
+P 2 0 1 0 0 68 0 82 N
+P 2 0 1 0 0 80 0 100 N
+X + 1 0 200 100 D 50 50 1 1 P
+X - 2 0 -300 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Transistor_BJT_TIP120
+#
+DEF Transistor_BJT_TIP120 Q 0 0 Y N 1 F N
+F0 "Q" 200 75 50 H V L CNN
+F1 "Transistor_BJT_TIP120" 200 0 50 H V L CNN
+F2 "Package_TO_SOT_THT:TO-220-3_Vertical" 200 -75 50 H I L CIN
+F3 "" 0 0 50 H I L CNN
+ALIAS TIP121 TIP122
+$FPLIST
+ TO?220*
+$ENDFPLIST
+DRAW
+C -30 0 5 0 1 0 N
+C 30 -80 5 0 1 0 N
+C 30 -10 5 0 1 0 N
+C 50 0 125 0 1 14 N
+C 100 -80 5 0 1 0 N
+C 100 -60 5 0 1 0 N
+C 100 40 5 0 1 0 N
+C 100 90 5 0 1 0 N
+P 2 0 1 0 -50 0 -35 0 N
+P 2 0 1 0 100 -80 100 -100 N
+P 2 0 1 0 100 -60 125 -60 N
+P 2 0 1 0 110 5 140 5 N
+P 2 0 1 0 125 -25 125 -60 N
+P 2 0 1 0 125 40 100 40 N
+P 2 0 1 0 125 40 125 5 N
+P 3 0 1 0 -10 30 30 -10 50 -10 N
+P 3 0 1 0 -10 40 -30 40 -30 -80 N
+P 3 0 1 0 -10 50 30 90 100 90 N
+P 3 0 1 12 -10 80 -10 0 -10 0 N
+P 3 0 1 15 50 30 50 -50 50 -50 N
+P 4 0 1 0 25 -5 15 15 5 5 25 -5 N
+P 4 0 1 0 50 -20 90 -60 100 -60 100 -80 N
+P 4 0 1 0 50 0 90 40 100 40 100 90 N
+P 4 0 1 0 85 -55 75 -35 65 -45 85 -55 N
+P 4 0 1 0 125 5 110 -25 140 -25 125 5 F
+P 10 0 1 0 30 -80 15 -80 10 -90 5 -70 0 -90 -5 -70 -10 -90 -15 -70 -20 -80 -30 -80 N
+P 11 0 1 0 30 -10 30 -80 45 -80 50 -70 55 -90 60 -70 65 -90 70 -70 75 -90 80 -80 100 -80 N
+X B 1 -200 0 150 R 50 50 1 1 I
+X C 2 100 200 105 D 50 50 1 1 P
+X E 3 100 -200 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
