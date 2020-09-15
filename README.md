@@ -8,6 +8,12 @@ Some description of the exercise.
 
 # Design concept
 
+<div align="center">
+<img width="25%" height="25%" src="images/overview-1.jpg" />
+<img width="25%" height="25%" src="images/overview-2.jpg" />
+<img width="25%" height="25%" src="images/overview-3.jpg" />
+</div>
+
 # Hardware
 
 <p style="text-align: justify;">
@@ -33,7 +39,7 @@ The following table provides an inital overview of all electrical equipment used
 The entire energy supply is ensured by four AA batteries connected in series. The four 1.5 V AA batteries connected in series provides a total voltage of 6 V. However, this level drops significantly during operation. The battery voltage was connectoed to luster terminals and distributed to the individual electrical components.
 </p>
 <p align="center">
-  <img width="100%" height="100%" src="images/Energy-Diagram.png">
+  <img width="721" height="451" src="images/Energy-Diagram.png">
 </p>
 
 |                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -42,30 +48,61 @@ The entire energy supply is ensured by four AA batteries connected in series. Th
 
 # The Arduino Uno R3
 
+The Arduino board is an open source developement board that is now available in serveral versions on the market. The third version of the Uno board was installed in the DaRRa robot. The Uno R3 is characterized by its smaller design compared to the competitor Mega 2560 provided by the university. In addition, the power consumption is low compared to other boards of the family.<br>
+The following table shows the exact technical operating data of the board. As can be seen in the overview picture, the Arduino board can be connect to the PC and programmend via USB type B interface. A power supply is also guaranteed during the connection with the PC. The actuators and sensors are connecte to the digital I/O of the board.
+
 ![Arduino-Detail](images/Arduino-Detail.png)
 
-Some facts about the Arduino.
+|                        |                 |
+| ---------------------- | :-------------: |
+| Operating voltage      |       5 V       |
+| Input voltage          |     7-12 V      |
+| Max. input voltage     |      20 V       |
+| digital I/O pins       | 14 (6 with PWM) |
+| analog pins            |        6        |
+| DC current per I/O pin |      40 mA      |
+| DC current for 3.3 V   |      50 mA      |
+| Flash memory           |      32 kB      |
+| SRAM                   |      2 kB       |
+| EEPROM                 |      1 kB       |
+| Mikcrocontroller       |   Atmega 328P   |
 
 # LN298 Motor driver
 
-Some facts about the used motor driver board
+The motor driver has an integrated double H-bridge to reverse the direction of rotation of the two motors and to vary speed via PWM. The following picture show how the motor driver module has to be connected. The input pins for forward and backward as well as the enabple pins for the PWM control must be connected to the Arduino according to the circuit diagram.
 
 ![L298-detail](images/L298-detail.png)
 
+# Bluetooth module
+
+The Bluetooth module comes from an electronics kit of the manufactor sparkfun. The sensor is supplied with a voltage of 3.3 V and can bea readn out via Rx/Tx interface. The Bluetooth module supports 2.4 GHz transmission rate.
+
 # Software
 
-Explenation of the software.
+The software of the DaRRa robot was implemented in the programming language C++. The Arduino libraries (Arduino.h) were used, but not programmed with the classic Arduino IDE. The Visual Studio Code program with PlatformIO extension was user for this purpose. Both are installed with little effort and make working with several \*.cpp files in a project much easier than the Arduino IDE. The structure and functionality of the software are documented in the following sections. The software can be grouped into thee main components:
+
+<ol>
+<li><b>Actuator/Sensor classes:</b> these classes encapsulate the control of all actuators and sensors as individual objects. These object are called up in the main program for each actuator/sensor.</li>
+<li><b>Task functions:</b> these functions contain the control logic of the individual movements and processes such as cyclical distance measurement.</li>
+<li><b>Main program:</b> the main program is running continously and a simple state-machine has been implemented here wich class the task functions under defined conditions.</li>
+</ol>
 
 ![Software-Detail](images/Software-Detail.png)
 
-# State Machine
+# State-Machine
+
+The state-machine is the central logic controlling unit of the DaRRa robot. With the help of the state-machine implementation in the following picture, control over the correct sequence of movements is ensured. The state-machine is only activated as sonn as the operating mode has been set to **AUTOMATIC_MODE** by the software. The state-machine remains in **INIT_STATE** as long as the control command 'J' has been received via the serial interface. If this is the case, the state-machhine changes to **SETUP_STATE**. The throwout-wheel is started here. With a small time delay of two seconds, the state-machine automatically changes to **DRIVE_FORWARD_STATE**. This remains active until the sensor -B33 at the front reaches the minimum distance **MIN_DIST_FRONT**. This value is set to 200 mm by default. However, it can be changed as required via the DaRRa interface. If the distance is less than 150 mm, the sequencer chages to **DRIVE_BACKWARD_STATE** step so that the robot does not hit the wall when it turns. The sequence remains in this step until the sensor reports a distance of >= 150 mm again. If this is the case, a check is made to determine which side is suitable for rotation. This is done quering the distance between the sensor on the side (-B31 and -B32) in the switching conditions. If both sensors report a distance of more than the value specified in the MIN_DIST_SIDE parameter, the robot begins to turn to the right. If only one side delivers a larger value, it rotates in the corresponding direction. When TURN_RIGHT_STATE or TURN_LEFT_STATE has been executed, the state-machine automatically changes back to DRIVE_FORWARD_STATE.
 
 ![State-Machine](images/State-machine.png)
 
 ## Realtime control and monitoring
 
-Explenation of the desktop application to monitor data an control the robot over bluetooth.
+The DaRRa interface is a C# desktop application that was specially developed for convenient communication and monitoring. With the DaRRa interface, almost live measurements of the ultrasonic sensors can be observed and analyzed. It is also possible to siwtch between an automatic mode and a manual operating mode. Manual mode is highly recommended for commissioning the robot, as individual actuators can be controlled here. Furthermore, parameters such as turning time of the robot when cornering or the minimum distances between the sonsros until the robot executes a rotation can be conveniently set. In automatic mode, the DaRRa interface shows which step is currently being executed.
 
-![DaRRa-Interface](images/DaRRa-Interface.png)
-![DaRRa-Interface-2](images/DaRRa-Interface-2.png)
-![DaRRa-Interface-3](images/DaRRa-Interface-3.png)
+Screenshots:
+
+<div align="center">
+  <img width="620" height="324" src="images/DaRRa-Interface.png">
+  <img width="100%" height="100%" src="images/DaRRa-Interface-2.png">
+  <img width="100%" height="100%" src="images/DaRRa-Interface-3.png">
+</div>
