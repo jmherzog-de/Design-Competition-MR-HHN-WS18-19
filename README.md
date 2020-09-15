@@ -42,7 +42,7 @@ The following table provides an inital overview of all electrical equipment used
 The entire energy supply is ensured by four AA batteries connected in series. The four 1.5 V AA batteries connected in series provides a total voltage of 6 V. However, this level drops significantly during operation. The battery voltage was connectoed to luster terminals and distributed to the individual electrical components.
 </p>
 <p align="center">
-  <img width="721" height="451" src="images/Energy-Diagram.png">
+  <img  src="images/Energy-Diagram.png">
 </p>
 
 |                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
