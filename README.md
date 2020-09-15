@@ -1,12 +1,15 @@
 # Design competition - Mechatronic and robotic HHN WS18/19
 
-This is the repository for the Design competition at the University of Applied Science Heilbronn on the WS 18/19.
+This is my repository of the traditional design competition for new students, held at the University of Applied Science Heilbronn at the WS 18/19. It contains some background informations, code and the circuit diagram.
 
-# Exercise description
+# Challange description
 
-Some description of the exercise.
+Construction of an autonomous vehicle, which is able to throw as many table tennis balls as possible from a 1.770x1.770 mm wide area. A total of 20 balls are randomly placed. A maximum of 4 AA batteries can be used. The robot must also fit into a shoe box when it is in a ready to drive mode. Furthermore, an Arduino board must be user for the control. Other controls are not permitted. It is also not allowed to intervene in the course of a running attempt.
 
 # Design concept
+
+In the planning phase we decided to pursure a concept in which the rable tennis balls should thrown out of the marked area with a wheel and a ramp. Ultrasonic sensors should be used to measure the distance on the bands. An absolute orientation of the robot is not provided. The robot should drive straight lines and rotate when reaching the end of the area.<br>
+Some impressions of the robot called DaRRa (Das Runde Raus):
 
 <div align="center">
 <img width="25%" height="25%" src="images/overview-1.jpg" />
